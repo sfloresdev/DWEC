@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 1 ins 1</title>
+    <script>
+        let num1 = document.getElementById("op1").value;
+        let num2 = document.getElementById("op2").value;
+        let suma = document.getElementById("resultado").value;
+
+        function operar(){
+            suma.value = num1 + num2;
+        }
+    </script>
+</head>
+<body>
+    <label for="">Operando 1: </label> <input type="text" id="op1"><br><br>
+    <label for="">Operando 2: </label> <input type="text" id="op2"><br><br>
+    <label for="">Resultado: </label> <input type="text" id="resultado"><br><br>
+    <input type="button" value="Sumar" onclick="operar()">
+</body>
+</html>

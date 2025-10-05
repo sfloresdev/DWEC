@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recalculado de Salario</title>
+    <script>
+        function actualizarInfo()
+        {
+            let nombre = document.getElementsByName('formulario')[0].value;
+            let apellido = document.getElementsByName('formulario')[1].value;
+            let apellido2 = document.getElementsByName('formulario')[2].value;
+            let salario = document.getElementsByName('formulario')[3].value;
+            let edad = document.getElementsByName('formulario')[4].value;
+
+            switch (true)
+            {
+                case (salario >= 1000 && salario <= 2000):
+                    if (edad > 45)
+                    {
+                        salario *= 1.03;
+                    } else
+                    {
+                        salario *= 1.1;
+                    }
+                    break
+
+                case (salario < 1000):
+                    if (edad < 30)
+                    {
+                        salario = 1100;
+                    }
+                    else if (edad >= 30 && edad <= 45)
+                    {
+                        salario *= 1.03;
+                    }
+                    else 
+                    {
+                        salario *= 1.15;
+                    }
+                    break
+
+                default: "Que afortunado"
+            }
+
+            console.log(nombre);
+            console.log(apellido);
+            console.log(apellido2);
+            console.log(salario);
+            console.log(edad);
+        }
+    </script>
+</head>
+
+<body>
+    <header style="text-align: center;">
+        <h1>Recalculado de Salario</h1>
+    </header>
+
+    <form>
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="formulario" id="nombre" required><br><br>
+        <label for="apellido">Apellido: </label>
+        <input type="text" name="formulario" id="apellido" required><br><br>
+        <label for="apellido2">Segundo Apellido: </label>
+        <input type="text" name="formulario" id="apellido2" required><br><br>
+        <label for="salario">Salario: </label>
+        <input type="number" name="formulario" id="salario" required><br><br>
+        <label for="edad">Edad: </label>
+        <input type="number" name="formulario" id="edad" required><br><br>
+    </form>
+
+    <button value="actualizar" onclick="actualizarInfo()">ACTUALIZAR</button>
+
+
+    <br><br>
+    <h3>INFORMACION ACTUALIZADA</h3>
+    <br><br>
+
+
+</body>
+
+</html>

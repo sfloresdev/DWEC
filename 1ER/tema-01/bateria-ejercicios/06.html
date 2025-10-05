@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fondo Aleatorio</title>
+    <script>
+        //Funcion anonima para generar un numero aleatorio N a M
+        const randomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+        const red = randomInt(1, 255);
+        const green = randomInt(1, 255);
+        const blue = randomInt(1, 255);
+
+        const color = `rgb(${red}, ${green}, ${blue})`
+
+        window.onload = () => {
+            document.body.style.backgroundColor = color;
+        }
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

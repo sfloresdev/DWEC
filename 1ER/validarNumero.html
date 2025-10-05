@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p>Introduce un numero</p>
+    <input type="text" id="num" onchange="isNumber()">
+
+
+    <script>    
+        function isNumber()
+        {
+            let number =  document.getElementById('num').value;
+            
+            if ( isNaN(number) || (number == "")) 
+                alert('No es un numero')
+            else
+                alert('Es un numero')
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function visualizar(){
+            document.getElementById('pantalla').value = document.getElementById('textoUsuario').value;
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id ="textoUsuario">
+    <input type="button" value="CAMBIAR" onclick="visualizar()"><br><br>
+    <textarea id="pantalla"></textarea>    
+</body>
+</html>

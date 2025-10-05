@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USANDO BUCLES</title>
+</head>
+
+<body>
+    <h3>CONFIGURA TU CONTADOR</h3>
+    <label for="">INICIO: </label><input type="number" name="configurador"><br><br>
+    <label for="">FIN: </label><input type="number" name="configurador"><br><br>
+    <label for="">INCREMENTO: </label><input type="number" name='configurador'><br><br>
+    <input type="button" value="A CONTAR" onclick="contador();">
+    <h3>VISUALIZADOR</h3>
+    <textarea id="salida" rows='10' cols="40"></textarea>
+    
+    <script>
+        let inicio = document.getElementsByName('configurador')[0];
+        let fin = document.getElementsByName('configurador')[1];
+        let incremento = document.getElementsByName('configurador')[2];
+
+        function contador()
+        {
+            const amount = parseInt(incremento.value);
+            let cont = parseInt(inicio.value);
+            let end = parseInt(fin.value);
+            let resultado = "";
+            while (cont < end) 
+            {   
+                resultado += cont + " ";
+                cont += amount;
+            }
+            document.getElementById('salida').value += resultado;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let total = 0;
+
+        function operar(operador){
+            let num1 = document.getElementById('operador1').value;
+            let num2 = document.getElementById('operador2').value;
+
+            switch (operador) {
+                case '+':
+                    total = parseInt(num1) + parseInt(num2);
+                    break;
+                case '-':
+                    total = parseInt(num1) - parseInt(num2);
+                    break;
+                case '/':
+                    total = parseInt(num1) / parseInt(num2);
+                    break;
+                case '*':
+                    total = parseInt(num1) * parseInt(num2);
+                    break;
+            }
+            document.getElementById('RESULTADO').value = total;
+
+            //Acumulador
+            document.getElementById('RESULTADO')
+        }
+
+        function limpiar(){
+            total = 0;
+            document.getElementById('RESULTADO').value = total;
+        }
+        /*
+        function validate(obj, maxVal, minVal){
+        
+            if ( (ojb.value < minVal) || (ojb.value > maxVal)){
+                alert();
+            }
+        }
+        */
+    </script>
+</head>
+<body>
+    
+    <input type="text" id="operador1"><br><br>
+    <input type="text" id="operador2"><br><br>
+    <input type="button" value="+" name="operando" onclick="operar(value)">
+    <input type="button" value="-" name="operando" onclick="operar(value)"><br><br>
+    <input type="button" value="*" name="operando" onclick="operar(value)">
+    <input type="button" value="/" name="operando" onclick="operar(value)"><br><br>
+    <input type="button" value="LIMPIAR" onclick="limpiar()"><br><br>
+    <input type="text" id="RESULTADO"><br><br>
+</body>
+</html>

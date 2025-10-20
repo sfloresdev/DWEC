@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Ejemplo-0 de prueba de ámbito de variables
+        function f0() {
+            const a = 9;
+            let b = 9;
+            var c = 23;
+            alert("Se ha ejecutado la función f0");
+        }
+        f0();
+        console.log("El valor de a es " + a);//Debería mostrar error
+        console.log("El valor de b es " + b);//Debería mostrar error
+        console.log("El valor de c es " + c);//Debería mostrar error
+        
+        //Ejemplo-1 de comportamiento de variables a efecto de ámbito.
+        function f1() {
+            if (true) {
+                const a = 9;
+                let b = 14;
+                var c = 23;
+            }
+            console.log("El valor de a es " + a);//Debería mostrar error
+            console.log("El valor de b es " + b);//Debería mostrar error
+            console.log("El valor de c es " + c);//Esta sería correcta
+        }
+        f1();
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

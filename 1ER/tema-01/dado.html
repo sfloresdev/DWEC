@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dado</title>
+	<script type="module">
+		import {randomInt} from '../../utils/utils.js'
+		function generateNumber(){	
+			let num = randomInt(1, 6);
+			console.log(num);
+			document.getElementById('result').value = num;
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="Generar" onclick="generateNumber()"><br><br>
+	Numero generado: <br><br>
+	<input type="text" name="result" id="result">
+</body>
+</html>

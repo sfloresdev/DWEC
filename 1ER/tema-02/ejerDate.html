@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ejercicio edad</title>
+</head>
+
+<body>
+
+	<h2>Eres mayor de edad?</h2> <br><br>
+
+	Introduce tu fecha de nacimiento <br><br>
+
+	<label for="year">Año</label>
+	<input type="number" id="year" name="year"><br>
+
+	<label for="month">Mes</label>
+	<input type="number" id="month" name="month"><br>
+
+	<label for="day">Dia</label>
+	<input type="number" id="day" name="day"><br><br>
+
+	<input type="button" onclick="under18()" value="Calcular">
+
+
+</body>
+
+<script>
+	function under18()
+	{
+		const año = document.getElementById('year').value;
+		const mes = document.getElementById('month').value;
+		const dia = document.getElementById('day').value;
+
+		let nacimiento =  new Date() - new Date(año, mes, dia);
+		
+		console.log(new Date().getTime());
+		console.log(nacimiento);
+
+	}
+</script>
+
+
+</html>

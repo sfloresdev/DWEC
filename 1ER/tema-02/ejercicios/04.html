@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cifrado</title>
+</head>
+<body>
+	<input value="Cambiar" type="button" id="lanzar" onclick="cesar()">
+	<p id="resultado"></p>
+</body>
+
+<script>
+
+	function cesar(){
+		let code = "";
+		let userText = prompt("Texto a cambiar");
+		let user = parseInt(prompt("Cuantas posiciones quieres desplazarlas?"));
+
+		if (!userText || !user)
+			return ;
+
+		for (let i = 0; i < userText.length; i++){
+			let letter = userText.charCodeAt(i) + user;
+			code += String.fromCharCode(letter);
+		}
+		alert(code);
+	}
+</script>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		const NUM_CUADRADOS = 2000;
+		for (let i = 0; i < NUM_CUADRADOS; i++){
+			let rojo = parseInt(Math.random() * 255);
+			let verde = parseInt(Math.random() * 255);
+			let azul = parseInt(Math.random() * 255);
+			let left = (Math.random() * 100) + '%';
+			let top = (Math.random() * 100) + '%';
+			document.write(
+				`<div style='position: absolute; background-color: rgb(${rojo},${verde},${azul}); left: ${left}; top: ${top}'>negros</div>`
+			)
+		}
+	</script>
+</body>
+</html>

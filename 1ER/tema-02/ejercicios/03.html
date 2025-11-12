@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<label for="tipo">Que tipo de queso prefiere</label><br>
+	<input type="text" id="tipo"><br><br>
+	<input type="button" value="Subir" onclick="devolverTipo()">
+
+	<br>
+	Su posicion es:
+	<strong id="resultado"></strong>
+
+	<script>
+		const miCadena = "cabrales, torta del casar, idiazabal"
+
+		function devolverTipo() {
+			const usuario = document.getElementById('tipo').value;
+			if (!usuario) return;
+			document.getElementById('resultado').innerText = miCadena.indexOf(usuario); 			
+		}
+	</script>
+</body>
+
+</html>

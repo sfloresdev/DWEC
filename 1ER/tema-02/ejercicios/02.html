@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+
+
+	<label for="insertar">Insertar frase</label>
+	<input type="text" id="parada">
+	<input type="button" name="insertar" value="Randomizar char" onclick="randomizarChar()">
+	<br><br>
+	<label for="caracter">El caracter de parada es: </label>
+	<input type="text" id="caracter">
+	<br><br>
+	Generar caracter aleatorio: <br><br> 
+	<input type="button"  value="Randomizar" id="randomizar" onclick="randomizar()">
+	<input type="text" id="caracterRandom">
+	
+</body>
+
+<script>
+	function randomizarChar() {
+		const string = document.getElementById('parada').value;
+		const caracter = "";
+		if (!string) return;
+
+		let index = Math.floor(Math.random() * string.length);
+		document.getElementById('caracter').value = string[index];
+	}
+
+	function randomizar() {
+		const string = document.getElementById('parada').value;
+		const caracter = document.getElementById('caracter').value;
+
+		let index = Math.floor(Math.random() * string.length);
+
+	}
+</script>
+</html>

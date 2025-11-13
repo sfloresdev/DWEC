@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Cesar Polialfabetico</title>
+</head>
+<body>
+	<label for="input">Introduce tu texto aqui: </label><br>
+	<input type="text" id="texto"><br><br>
+	<input type="button" onclick="cifrar()" value="ROTAR"><br><br>
+	<label for="rotado">Texto rotado N posiciones: </label><br>
+	<input type="text" id="cifrado">
+</body>
+	<script>
+		function cifrar(){
+			let userInput = document.getElementById('texto').value;
+			let code = "";
+			let n = 0;
+			for (let i = 0; i < userInput.length; i++){
+				n += 1;
+				let letter = userInput.charCodeAt(i) + n;
+				code += String.fromCharCode(letter);
+			}
+			document.getElementById('cifrado').value = code;
+		}
+	</script>
+</html>

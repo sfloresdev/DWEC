@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Primitiva</title>
+</head>
+
+<body>
+	<br><br>
+	<input type="button" value="Realizar tirada" onclick="tirar()"><br><br>
+	<label for="primitiva">Resultado de la tirada: </label><br><br>
+	<hr>
+	<div id="result"></div>
+
+</body>
+<script>
+	const N_NUMBERS = 6;
+
+	function tirar() {
+		let numbers = [];
+		let i = 0;
+		while (i < N_NUMBERS){
+			let n = Math.floor(Math.random() * 49) + 1;
+
+			if (!numbers.includes(n)){
+				numbers[i] = n;
+				i++;
+			}
+		}
+		numbers.sort((a, b) => a - b);
+		console.log(numbers);
+		document.getElementById('result').textContent = numbers.join(", ");
+	}
+</script>
+
+</html>

@@ -8,18 +8,24 @@
 <body>
 	<label for="input">Introduce tu texto aqui: </label><br>
 	<input type="text" id="texto"><br><br>
+	<label for="input">Clave: </label><br>
+	<input type="text" id="clave"><br><br>
 	<input type="button" onclick="cifrar()" value="ROTAR"><br><br>
 	<label for="rotado">Texto rotado N posiciones: </label><br>
 	<input type="text" id="cifrado">
 </body>
 	<script>
 		function cifrar(){
+			let userKey = document.getElementById('clave').value;
 			let userInput = document.getElementById('texto').value;
 			let code = "";
-			let n = 0;
+			let count = 1;
+
 			for (let i = 0; i < userInput.length; i++){
-				n += 1;
-				let letter = userInput.charCodeAt(i) + n;
+				let letter = userInput.charCodeAt(i) + count;
+				if (count === userKey.length)
+					count = 0;
+				count++;
 				code += String.fromCharCode(letter);
 			}
 			document.getElementById('cifrado').value = code;

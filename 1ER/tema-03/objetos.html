@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Inicializando objetos</title>
+</head>
+<body onload="leer()">
+	<h2>Visualizando propiedades de un objeto inicializado</h2>
+
+	<label for="">Color: </label><input type="text" name="propiedades"><br><br>
+	<label for="">Tipo: </label><input type="text" name="propiedades"><br><br>
+
+	<h3>Motor</h3><br>
+
+	<label for="">Cilindros: </label><input type="text" name="propiedades"><br><br>
+	<label for="">Tamaño: </label><input type="text" name="propiedades"><br>
+
+	<script>
+		var miHonda={color: "rojo", tipo: "Berlina", motor: {cilindros: 4, tamanio: 2.2}};
+	
+		function leer(){
+
+			let valores = [
+				miHonda.color,
+				miHonda.tipo,
+				miHonda.motor.cilindros,
+				miHonda.motor.tamanio
+			]
+
+			let input = document.getElementsByName('propiedades');
+
+			valores.forEach((v, i) => {
+				input[i].value = v;
+			});	
+		}
+	</script>
+</body>
+</html>

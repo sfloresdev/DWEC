@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numeros aleatorios</title>
+</head>
+
+<body>
+    <label for="numero1">Numero 1 </label>
+    <p id="numero1"></p><br><br>
+    <label for="numero2">Numero 2 </label>
+    <p id="numero2"></p><br><br>
+    <label for="numero3">Numero 3 </label>
+    <p id="numero3"></p><br><br>
+    <label for="numero4">Numero 4 </label>
+    <p id="numero4"></p><br><br>
+    <label for="numero5">Numero 5 </label>
+    <p id="numero5"></p><br><br>
+    <label for="numero6">Numero 6 </label>
+    <p id="numero6"></p><br><br>
+    <label for="numero7">Numero 7 </label>
+    <p id="numero7"></p><br><br>
+    <label for="numero8">Numero 8 </label>
+    <p id="numero8"></p><br><br>
+    <label for="numero9">Numero 9 </label>
+    <p id="numero9"></p><br><br>
+    <label for="numero10">Numero 10 </label>
+    <p id="numero10"></p><br><br>
+
+    <input type="button" value="Calcular Frecuencia" onclick="calcularFrecuencia()">
+</body>
+
+    <script>
+    
+        function calcularFrecuencia(){
+            let frecuencias = {};
+
+            for (let i = 0; i < 10_000; i++){
+                let number = Math.floor(Math.random() * 10) + 1;
+
+                if (frecuencias[number])
+                    frecuencias[number]++;
+                else 
+                    frecuencias[number] = 1;
+            }
+
+            for (const numero in frecuencias){
+                document.getElementById(`numero${numero}`).textContent = frecuencias[numero];
+            }
+            /*
+            Object.keys(frecuencias).forEach((numero)=>{
+                document.getElementById(`numero${numero}`).textContent = frecuencias[numero];
+            });
+            */
+        }
+    </script>
+
+</html>

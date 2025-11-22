@@ -1,0 +1,79 @@
+<DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="">Introduce la URL de la web que quieras analizar</label><br>
+    <input type="text" placeholder="Inserta aqui tu URL" id="url"><br>
+    <input type="button" value="Analizar" onclick="analizarURL()">
+    
+    <p id="al_protocol"></p>
+    <p id="al_domain"></p>
+    <p id="al_arguments"></p>
+</body>
+    <script>
+        function analizarURL(){
+            const URL = document.getElementById("url").value;
+            let protocol = "";
+            let domain = "";
+            let arguments = "";
+
+            if (URL.startsWith("https"))
+                protocol = "https";
+            else if (URL.startsWith("http"))
+                protocol = "http";
+            else 
+                protocol = "https (Agregado por defecto)";
+
+            for (let i = 0; i < URL.length; i++){
+                if (URL[i] == "w"){
+                    while (URL[i] != "/" && i < URL.length){
+                        domain += URL[i];
+                        i++;
+                    }
+                    arguments = URL.substring(i);
+                    break;
+                }
+            }
+            document.getElementById("al_protocol").textContent = protocol;
+            document.getElementById("al_domain").textContent = domain;
+            document.getElementById("al_arguments").textContent = arguments;
+        }
+    
+        function analizarURL_Limpia(){
+            const URL = document.getElementById("url").value;
+            let protocol = "";
+            let domain = "";
+            let arguments = "";
+            let restoURL = "";
+            const separator = "://";
+            const pos_separator = URL.indexOf(separator);
+
+            if (pos_separator === -1){
+                protocol = "https (añadido por defecto)";
+                restoURL = URL;
+            }
+            else{
+                protocol = URL.substring(0, pos_separator);
+                let inicioDominio = pos_separator + separator.length;
+                restoURL = URL.substring(inicioDominio);
+            }
+
+            const pos_barra = restoURL.indexOf("/");
+
+            if (pos_barra === -1){
+                domain = restoURL;
+                args = "";
+            } else {
+                domain = restoURL.substring(0, pos_barra);
+                arguments = restoURL.substring(pos_barra);
+            }
+            document.getElementById("al_protocol").textContent = protocol;
+            document.getElementById("al_domain").textContent = domain;
+            document.getElementById("al_arguments").textContent = arguments;
+        }
+    </script>
+</html>
